@@ -1,0 +1,546 @@
+{% load static %}
+
+
+<!-- ===============================================-->
+<!--       Pestañas de etapa                        -->
+<!-- ===============================================-->
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="tab-antecedentes" data-bs-toggle="tab" data-bs-target="#antecedentes_familiares" type="button"
+      role="tab" aria-controls="antecedentes_familiares" aria-selected="false">Antecedentes Familiares</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="tab-antecedentes_personales" data-bs-toggle="tab" data-bs-target="#antecedentes_personales"
+      type="button" role="tab" aria-controls="antecedentes_personales" aria-selected="true">Antecedentes Personales</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="tab-obstetricos" data-bs-toggle="tab" data-bs-target="#obstetricos" type="button"
+      role="tab" aria-controls="obstetricos" aria-selected="true">Obstetricos</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="tab-embarazo_previo" data-bs-toggle="tab" data-bs-target="#embarazo_previo"
+      type="button" role="tab" aria-controls="embarazo_previo" aria-selected="true">Embarazo Previo</button>
+  </li>
+</ul>
+
+
+<!-- ===============================================-->
+<!--       Contenido de pestañas                    -->
+<!-- ===============================================-->
+<!-- Antecedentes Familiares -->
+
+<!--Antecedentes Familiares-->
+<div class="tab-content" id="antecedentes_familiares-content">
+  <div class="tab-pane fade show active" id="antecedentes_familiares" role="tabpanel" aria-labelledby="antecedentes_familiares">
+    <div class="tab-pane container active" id="antecedentes_familiares" role="tabpanel">
+      <span>
+        <div class="container my-2">
+          <small class="text-body-secondary">Antecedentes familiares del paciente</small>
+          <hr class="my-4">
+        </div>
+      </span>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col">
+        <div class="card m-2" style="width: auto;">
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2">Familiares</h5>
+            <div class="Familiares-check-group">
+              <div class="control mb-2">
+                <div class="row justify-content-center d-flex">
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>TBC</span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_tbcfamiliar_0020 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <label class="form-check-label" for="flexCheckDefault">
+                      <span>Diabetes</span>
+                      </label>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                          {{ form.hcp_ant_diabetfamiliar_0022 }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <label class="form-check-label" for="flexCheckDefault">
+                      <span>Hipertension</span>
+                      </label>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                          {{ form.hcp_ant_hipertenfamiliar_0024 }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center d-flex">
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Preclampisa</span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_preeclampsiafamiliar_0026 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Eclampsia</span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_eclampsiafamiliar_0028 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Otra Cond. Medica Grave
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_otracondmedicafamiliar_0030 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Antecedentes Personales-->
+<div class="tab-content" id="antecedentes_personales-content">
+  <div class="tab-pane fade " id="antecedentes_personales" role="tabpanel" aria-labelledby="antecedentes_personales">
+    <div class="tab-pane container active" id="antecedentes_personales" role="tabpanel">
+      <span>
+        <div class="container my-2">
+          <small class="text-body-secondary">Antecedentes personales del paciente</small>
+          <hr class="my-4">
+        </div>
+      </span>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col">
+        <div class="card m-2" style="width: auto;">
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2">Personales</h5>
+            <div class="nivel-estudios-check-group">
+              <div class="control mb-2">
+                <div class="row justify-content-center d-flex">
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>TBC
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_tbcpersonal_0021 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Diabetes
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_diabetpersonal_0023 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Hipertension
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_hipertenpersonal_0025 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center d-flex">
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Preclampsia
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_preeclampsiapersonal_0027 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Eclampsias
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_eclampsiapersonal_0029 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Cardiopatia
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_cardiopat_0034 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center d-flex">
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Nefropatia
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_nefropatia_0035 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Infertilidad
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_infertilidad_0033 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Cgia Genito-Urinaria
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_cgiagenitourinaria_0032 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center d-flex">
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Violencia
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_violencia_0036 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>VIH+
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_vih_0432 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col">
+                      <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          <span>Otra Cond. Medica Grave
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          {{ form.hcp_ant_otracondmedicapersonal_0031 }}
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Obstetricos-->
+<div class="tab-content" id="obstetricos-content">
+  <div class="tab-pane fade" id="obstetricos" role="tabpanel" aria-labelledby="obstetricos">
+    <div class="tab-pane container" id="obstetricos" role="tabpanel">
+      <span>
+        <div class="container my-2">
+          <small class="text-body-secondary">Antecedentes Obstetricos</small>
+          <hr class="my-4">
+        </div>
+      </span>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col-md-auto">
+        <div class="row mb-2">
+          <div class="card">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2">Utimo Previo</h6>
+              <div class="ultimo-previo-check-group">
+                <div class="control mb-2">
+                  {{ form.hcp_ant_ultimoprevio_0038 }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="card">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2">Antecedente de Gemelares</h6>
+              <div class="alfabeta-check-group">
+                <div class="control mb-2">
+                  {{ form.hcp_ant_antecedentegemelar_0039 }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row" >
+          <div class="col mb-3">
+           <label for="formGroupExampleInput" class="form-label">Gesta previa</label>
+            {{form.hcp_ant_gestasprevia_0040 }}
+          </div>
+          <div class="col mb-3">
+             <label for="formGroupExampleInput" class="form-label">Aborto</label>
+            {{ form.hcp_ant_abortos_0041 }}
+          </div>
+          <div class="col mb-3">
+             <label for="formGroupExampleInput" class="form-label">Vaginales</label>
+            {{ form.hcp_ant_partvaginales_0042 }}
+          </div>
+          <div class="col mb-3">
+             <label for="formGroupExampleInput" class="form-label">nacidos vivos</label>
+            {{ form.hcp_ant_nacidovivo_0043 }}
+          </div>
+          <div class="col mb-3">
+             <label for="formGroupExampleInput" class="form-label">viven</label>
+            {{ form.hcp_ant_viven_0044}}
+          </div>
+        </div>
+        <div class="row justify-content-start">
+          <div class="col mb-3">
+              <label for="formGroupExampleInput" class="form-label">Emb ectópico</label>
+              {{ form.hcp_ant_embectopico_0409 }}
+          </div>
+          <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <div class="col mb-3">
+                 <label for="formGroupExampleInput" class="form-label">3 espont. consecutivos</label>
+                {{form.hcp_ant_tresabortosconsecu_0045}}
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="col"></div> <!-- Columna vacía -->
+          <div class="col mb-3">
+            <label class="form-label">Nac. muertos</label>
+            {{ form.hcp_ant_nacidomuerto_0048}}
+          </div>
+          <div class="col mb-3">
+             <label for="formGroupExampleInput" class="form-label">antes 1 semana</label>
+            {{ form.hcp_ant_muertoantessemana_0049}}
+          </div>
+        </div>
+        <div class="row justify-content-start">
+          <div class="col mb-3"></div> <!-- Columna vacía -->
+          <div class="col mb-3">
+            <label for="formGroupExampleInput" class="form-label">parto</label>
+            {{ form.hcp_ant_partosprevios_0046}}
+          </div>
+          <div class="col mb-3">
+            <label for="formGroupExampleInput" class="form-label">cesárea</label>
+            {{form.hcp_ant_cesareas_0047}}
+          </div>
+          <div class="col mb-3"></div> <!-- Columna vacía -->
+          <div class="col mb-3">
+            <label for="formGroupExampleInput" class="form-label">desp 1 semana</label>
+            {{ form.hcp_ant_muertodespsemana_0050}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Embarazo previo-->
+  <div class="tab-content" id="embarazo_previo-content">
+    <div class="tab-pane fade" id="embarazo_previo" role="tabpanel" aria-labelledby="embarazo_previo">
+      <div class="tab-pane container" id="embarazo_previo" role="tabpanel">
+        <span>
+          <div class="container my-2">
+            <small class="text-body-secondary">Datos del embarazo previo de la paciente</small>
+            <hr class="my-4">
+          </div>
+        </span>
+      </div>
+      <div class="row justify-content-center d-flex">
+        <div class="col-md-auto">
+          <div class="card m-2" style="width: auto;">
+            <div class="card-body">
+              <h5 class="card-subtitle mb-2">Fin Embarazo Anterior</h5>
+              {{ form.hcp_ant_fechaembarazoanterior_0051 }}
+              <h6 class="fw-normal">Tiene Menos de 1 Año:</h6>
+              {{form.hcp_ant_finmenosdeunanio_0052}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <div class="card m-2" style="width: auto;">
+            <div class="card-body">
+              <h5 class="card-subtitle mb-2">Embarazo Planeado</h5>
+              {{ form.hcp_ant_embarazoplaneado_0053 }}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <div class="card m-2" style="width: auto;">
+            <div class="card-body">
+              <h5 class="card-subtitle mb-2">Fracaso Método Anticonceptivo</h5>
+              {{ form.anticonceptivo}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src={% static 'assets/js/check-controls.js' %}></script>
+
+
+
+  <!--MODELO DE NAV DE PESTAÑAS button class="class="nav-link active" para pestaña activa-->
+  <!--
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="tab-nombre_pestaña" data-bs-toggle="tab" data-bs-target="#id-pestaña-objetivo"
+      type="button" role="tab" aria-controls="nombre_pestaña" aria-selected="true">titulo de pestaña</button>
+  </li>
+
+  ....
+</ul>
+-->
+  <!--MODELO DE PESTAÑA  ( class="tab-pane fade show active" para la ventanita activa)-->
+  <!--
+<div class="tab-content" id="id_de_pestaña-content">
+  <div class="tab-pane fade" id="id_de_pestaña" role="tabpanel" aria-labelledby="nombre_de_pestaña">
+    <div class="tab-pane container active" id="nombre_de_pestaña" role="tabpanel">
+      <span>
+        <div class="container my-2">
+          <small class="text-body-secondary">Titulo de contenido de la pestaña</small>
+          <hr class="my-4">
+        </div>
+      </span>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col">
+        Contenido
+      </div>
+      <div class="col">
+        Contenido
+      </div>
+    </div>
+  </div>
+</div>
+-->

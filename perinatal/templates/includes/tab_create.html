@@ -1,0 +1,30 @@
+{% for fields in form.get_elements %}
+<!-- {{ fields.0.label }} -->
+{% if forloop.first %}
+<div class="tab-pane container active" id="id_{{ fields.0.label|slugify }}" role="tabpanel">
+    {% else %}
+    <div class="tab-pane container fade" id="id_{{ fields.0.label|slugify }}" role="tabpanel">
+        {% endif %}
+        <div class="row pb-2 my-3" style="border-bottom: 1px solid #EAEAEA; flex-grow: unset;">
+            <h5>Datos Generales</h5>
+            <span><small class="text-body-secondary">Información personal del paciente</small></span>
+        </div>
+        {% for element in fields %}
+        <div class="row justify-content-center d-flex">
+            <div class="col">
+                <div class="control mb-2">
+                    <label for="id_{{ element.label }}"
+                           class="col-form-label d-flex justify-content-start align-items-center">
+                        <span>{{ element.label }}</span>
+                    </label>
+                    {{ element }}
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- {% static 'assets/css/bootstrap.min.css' %}  -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/assets/icon/favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <title>SIP Plus</title>
+</head>
+
+<body>
+
+    <section class="container py-4">
+        <!-- Header -->
+        <div class="row">
+            <div class="col" style="border-bottom: 1px solid #EAEAEA;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h2>Historia Clinica Perinatal</h2>
+                    </div>
+                    <div class="row">
+                        <span style="color:darkgrey">Completa los campos para realizar la carga del registro.</span>
+                    </div>
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                    style="background-color: #00D69F; width: 30%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="row">
+            <!-- nav options -->
+            <div class="col" style="border-right: 1px solid #EAEAEA; flex-grow: unset;">
+                <div class="navbar navbar-expand">
+                    <ul class="navbar-nav align-items-center flex-column mb-3 active progress-bar2" role="tablist">
+                         <li class="nav-item" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#Etapa0"
+                                aria-selected="true" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Etapa 0</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-solid fa-circle-check fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Etapa1"
+                                aria-selected="false" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Etapa 1</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Etapa2"
+                                aria-selected="false" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Etapa 2</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Etapa3"
+                                aria-selected="false" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Etapa 3</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Etapa4"
+                                aria-selected="false" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Etapa4</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- body -->
+            <div class="col">
+                <form method="POST" class="mt-3" action="{% url 'create_perinatal_record' %}">
+                    {% csrf_token %}
+                    <div class="container-fluid">
+                        <!-- header -->
+                        
+                        <!-- tabs -->
+                        <div class="row tab-content">
+                            <!-- Etapa 0 -->
+                            <div class="tab-pane container active" id="Etapa0" role="tabpanel">
+                                {% include 'DatosGenerales_form.html' %}
+                            </div>
+                            <!-- Etapa 1 -->
+                            <div class="tab-pane container fade" id="Etapa1" role="tabpanel">
+                                {% include 'HcpHcPerinatal_form.html' %}
+                            </div>
+                            <!-- Datos Complementarios SEGUNDA ETAPA-->
+                            <div class="tab-pane container fade" id="Etapa2" role="tabpanel">
+                                ETAPA2
+                            </div>
+
+                            <!-- Area Operativa -->
+                            <div class="tab-pane container fade" id="Etapa3" role="tabpanel">
+                                <div class="control mb-2">
+                                    <input class="form-control" type="text" placeholder="TBC">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="text" placeholder="Diabetes">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="text" placeholder="Hipertensión">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="text" placeholder="Preeclampsia">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="text" placeholder="VIH">
+                                </div>
+                            </div>
+                            <!-- Antecedentes obstétricos del embarazo actual -->
+                            <div class="tab-pane container fade" id="Etapa4"
+                                role="tabpanel">
+                                <div class="control mb-2">
+                                    <input class="form-control" type="date" placeholder="Fecha de inicio del embarazo">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="number" placeholder="Gesta actual">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="number" placeholder="Control prenatal">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="number" placeholder="Ecografías">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="number" placeholder="Exámenes de laboratorio">
+                                </div>
+                                <div class="control mb-2">
+                                    <input class="form-control" type="text" placeholder="Complicaciones">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- buttons -->
+                        <div class="row my-3">
+                            <div class="col d-flex justify-content-end">
+                                <button class="btn me-2">Anterior</button>
+                                <button class="btn button"
+                                    style="background-color: #00D69F; color: white;">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2" name="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="row justify-content-sm-center my-2">
+        <div class="col">
+            {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Se encontraron errores:</h4>
+                <ul>
+                    {% for field, field_errors in form.errors.items %}
+                        <li><strong>{{ field }}:</strong>
+                            <ul>
+                                {% for error in field_errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+    <!-- {% static 'assets/js/bootstrap.bundle.min.js' %}  -->
+    
+</body>
+
+</html>

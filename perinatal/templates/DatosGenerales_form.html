@@ -1,0 +1,142 @@
+{% load static %}
+
+
+<!-- ===============================================-->
+<!--       Pestañas de etapa                        -->
+<!-- ===============================================-->
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="tab-datos-generales" data-bs-toggle="tab" data-bs-target="#datos-generales"
+      type="button" role="tab" aria-controls="datos-generales" aria-selected="true">Datos generales</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="tab-datos-complementarios" data-bs-toggle="tab" data-bs-target="#datos-complementarios"
+      type="button" role="tab" aria-controls="datos-complementarios" aria-selected="false">Datos
+      complementarios</button>
+  </li>
+</ul>
+
+<!-- ===============================================-->
+<!--       Contenido de pestañas                    -->
+<!-- ===============================================-->
+
+<!-- Datos Generales-->
+<div class="tab-content" id="datos-generales-content">
+  <div class="tab-pane fade show active" id="datos-generales" role="tabpanel" aria-labelledby="datos-generales">
+    <div class="tab-pane container active" id="datos-demograficos" role="tabpanel">
+      <span>
+        <div class="container my-2">
+          <small class="text-body-secondary">Información personal del paciente</small>
+          <hr class="my-4">
+        </div>
+      </span>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col">
+        <div class="form-floating mb-3">
+          {{ form.hcp_nrodocumento_0019 }}
+          <label for="id_hcp_nrodocumento_0019">Numero de Documento</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-floating mb-3">
+          {{ form.hcp_nrodocumento_0019 }}
+          <label for="id_hcp_telefono_0005">Telefono de Contacto</label>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col m-3">
+        {{ form.hcp_fechanacimiento_0006 }}
+      </div>
+      <div class="col m-3">
+        {{ form.hcp_edad_0009 }}
+        <span id="msg-alerta-edad" style="display: none;">
+          <p class="text-danger m-0 p-0">Edad en rangos de alerta</p>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Datos complementarios-->
+<div class="tab-content" id="datos-complementarios-content">
+  <div class="tab-pane fade" id="datos-complementarios" role="tabpanel" aria-labelledby="datos-complementarios">
+    <div class="tab-pane container">
+      <!--<span style="color:darkgrey">step 1/8</span>-->
+      <div class="container my-2">
+        <span>
+          <small class="text-body-secondary">Información complementaria del paciente</small>
+          <hr class="my-4">
+        </span>
+      </div>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col">
+        <div class="control mb-2 form-floating">
+          {{ form.hcp_etnia_0011 }}
+          <label for="id_hcp_etnia_0011">Etnia</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="control mb-2 form-floating">
+          {{ form.hcp_estadocivil_0015 }}
+          <label for="id_hcp_estadocivil_0015">Estado Civil</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="control mb-2 form-floating">
+          {{ form.hcp_vivesola_0016 }}
+          <label for="id_hcp_vivesola_0016">Vive Sola</label>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col">
+        <div class="card m-2" style="width: auto;">
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2">Alfabeta</h5>
+            <div class="alfabeta-check-group">
+              <div class="control mb-2">
+                
+                <div class="form-check">
+                  {{ form.hcp_alfabeta_0012 }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card m-2" style="width: auto;">
+          <div class="card-body">
+            
+            <h5 class="card-subtitle mb-2">Estudios</h5>
+            <div class="alfabeta-check-group">
+              <div class="control mb-2">
+                <div class="form-check">
+                  {% for field in form.hcp_estudios_0013 %}
+                    {{ field }}
+                    {{ field.label_tag }}
+                    <br>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center d-flex">
+      <div class="col">
+        <div class="form-floating mb-3">
+          {{form.hcp_aniosmayornivel_0014}}
+          <label for="id_hcp_aniosmayornivel_0014">Años en el mayor nivel educativo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

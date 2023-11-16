@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- {% static 'assets/css/bootstrap.min.css' %}  -->
+    <!-- {% static 'assets/css/bootstrap.min.css' %}  -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/assets/icon/favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <title>SIP Plus</title>
+</head>
+
+<body>
+<!-- Inicio del bloque Content -->
+    <section class="container py-4">
+        <!-- Header -->
+        <div class="row">
+            <div class="col" style="border-bottom: 1px solid #EAEAEA;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h2>Historia Clinica Perinatal</h2>
+                    </div>
+                    <div class="row">
+                        <span style="color:darkgrey">Completa los campos para realizar la carga del registro.</span>
+                    </div>
+                    <div class="row mt-2 mb-3">
+                        <div class="col">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                    style="background-color: #00D69F; width: 30%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="row">
+            <!-- nav options -->
+            <div class="col" style="border-right: 1px solid #EAEAEA; flex-grow: unset;">
+                <div class="navbar navbar-expand">
+                    <ul class="navbar-nav align-items-center flex-column mb-3 active progress-bar2" role="tablist">
+                        <li class="nav-item w-100" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#datos-demograficos"
+                                aria-selected="true" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Datos Generales</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-solid fa-circle-check fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item w-100" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#datos-complementarios"
+                                aria-selected="false" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Datos Complementarios</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#antecedentes"
+                                aria-selected="false" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Antecedentes</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item w-100" data-bs-toggle="tab" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#antecedentes-obstetricos-embarazo-actual"
+                                aria-selected="false" role="tab" tabindex="-1">
+                                <div class="container">
+                                    <div class="row align-items-center flex-nowrap">
+                                        <div class="col flex-fill">
+                                            <h6>Antecedentes Obstétricos</h6>
+                                        </div>
+                                        <div class="col justify-content-end flex-shrink-0">
+                                            <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- body -->
+            <div class="col">
+                <div class="container-fluid">
+                    <!-- tabs -->
+                    <div class="row tab-content">
+                        <!-- Datos demográficos -->
+                        <div class="tab-pane container active" id="datos-demograficos" role="tabpanel">
+                            <div class="row pb-2 my-3" style="border-bottom: 1px solid #EAEAEA; flex-grow: unset;">
+                                <!--<span style="color:darkgrey">step 1/8</span>-->
+                                <h5>Datos Generales</h5>
+                                <span><small class="text-body-secondary">Información personal del paciente</small></span>
+        
+                            </div>
+                            <div class="row justify-content-center d-flex">
+                                <div class="col">
+                                    <div class="control mb-2">
+                                        {{ form.hcp_nrodocumento_0019 }}
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="control mb-2">
+                                       {{ form.hcp_telefono_0005 }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center d-flex">
+                                <div class="col">
+                                    {{ form.hcp_fechanacimiento_0006 }}
+                                </div>
+                                <div class="col">
+                                    <input id="Edad" class="form-control" readonly="True" type="text" placeholder="">
+                                </div> 
+                            </div>   
+                            
+                        </div>
+                        <!-- Datos Complementarios -->
+                        <div class="tab-pane container fade" id="datos-complementarios" role="tabpanel">
+                            <div class="row pb-2 my-3" style="border-bottom: 1px solid #EAEAEA; flex-grow: unset;">
+                                <!--<span style="color:darkgrey">step 1/8</span>-->
+                                <h5>Datos Complementarios</h5>
+                                <span><small class="text-body-secondary">Información complementaria del paciente</small></span>
+        
+                            </div>
+                            <div class="row justify-content-center d-flex">
+                                <div class="col">
+                                    <div class="control mb-2">
+                                        {{ form.hcp_etnia_0011 }}
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="control mb-2">
+                                        {{ form.hcp_estadocivil_0015 }}
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    {{ form.hcp_vivesola_0016}}
+                                </div>
+                            </div>
+                            <div class="row justify-content-center d-flex">
+                                <div class="col">
+                                    <div class="card m-2" style="width: auto;">
+                                        <div class="card-body">
+                                            <h5 class="card-subtitle mb-2">Alfabeta</h5>
+                                            <div class="alfabeta-check-group">
+                                                <div class="control mb-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="S" name="alfabeta">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                        Si
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="N" name="alfabeta">
+                                                        <label class="form-check-label" for="flexCheckChecked">
+                                                        No
+                                                        </label>
+                                                    </div>
+                                                    {{ form.hcp_alfabeta_0012 }}    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card m-2" style="width: auto;">
+                                        <div class="card-body">
+                                            {{ form.hcp_estudios_0013 }}
+                                            <h5 class="card-subtitle mb-2">Estudios</h5>
+                                            <div class="nivel-estudios-check-group">
+                                                <div class="control mb-2">
+                                                    <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="0" name="nivel-estudios">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Ninguno</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="nivel-estudios">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Primario</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="2" name="nivel-estudios">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Secundario</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="3" name="nivel-estudios">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Universitario</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center d-flex">
+                                <div class="col">
+                                    <label for="id_hcp_aniosmayornivel_0014" class="col-form-label d-flex justify-content-start align-items-center">
+                                        <span>Años en mayor nivel</span>
+                                    </label>
+                                    {{form.hcp_aniosmayornivel_0014}}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Antecedentes -->
+                        <div class="tab-pane container fade" id="antecedentes" role="tabpanel">
+                            <div class="row pb-2 my-3" style="border-bottom: 1px solid #EAEAEA; flex-grow: unset;">
+                                <!--<span style="color:darkgrey">step 1/8</span>-->
+                                <h5>Antecedentes </h5>
+                                <span><small class="text-body-secondary">Información sobre antecedentes</small></span>
+                            </div>
+                             <div class="col">
+                                    <div class="card m-2" style="width: auto;">
+                                        <div class="card-body">
+                                            <h5 class="card-subtitle mb-2">Familiares</h5>
+                                            <div class="Familiares-check-group">
+                                                <div class="control mb-2">
+                                                    <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="0" name="TBC_Fam">
+
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>TBC</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="Diabetes_Fam">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Diabetes</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="Eclampsia_Fam">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Eclampsia</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="2" name="Hipertension_Fam">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Hipertensión</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="3" name="Preeclam_Fam">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Preeclampsia</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="OtrasCondMedica_Fam">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Otra Cond. Médica Grave</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col">
+                                    <div class="card m-2" style="width: auto;">
+                                        <div class="card-body">
+                                            <h5 class="card-subtitle mb-2">Personales</h5>
+                                            <div class="nivel-estudios-check-group">
+                                                <div class="control mb-2">
+                                                    <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="0" name="TBC_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>TBC</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="Diabetes_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Diabetes</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="CgiaGenitoUrinaria_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Cirugia genito-urinaria</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="2" name="OtraCondMedGraven_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Otra Condicion Med Grave</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="3" name="Eclampsia_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Eclampsia</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="Cardiopatia_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Cardiopatia</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="2" name="Hipertension_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Hipertensión</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="3" name="Preeclamp_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Preeclampsia</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="Infertilidad_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Infertilidad</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row justify-content-center d-flex">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="2" name="Nefropatia_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Nefropatía</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="3" name="Violencia_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>Violencia</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="1" name="vih_Person">
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    <span>VIH+</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Antecedentes obstétricos del embarazo actual -->
+                        <div class="tab-pane container fade" id="antecedentes-obstetricos-embarazo-actual"
+                            role="tabpanel">
+                            <div class="control mb-2">
+                                <input class="form-control" type="date" placeholder="Fecha de inicio del embarazo">
+                            </div>
+                            <div class="control mb-2">
+                                <input class="form-control" type="number" placeholder="Gesta actual">
+                            </div>
+                            <div class="control mb-2">
+                                <input class="form-control" type="number" placeholder="Control prenatal">
+                            </div>
+                            <div class="control mb-2">
+                                <input class="form-control" type="number" placeholder="Ecografías">
+                            </div>
+                            <div class="control mb-2">
+                                <input class="form-control" type="number" placeholder="Exámenes de laboratorio">
+                            </div>
+                            <div class="control mb-2">
+                                <input class="form-control" type="text" placeholder="Complicaciones">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- buttons -->
+                    <div class="row my-3">
+                        <div class="col d-flex justify-content-end">
+                            <button class="btn me-2">Anterior</button>
+                            <button class="btn button"
+                                style="background-color: #00D69F; color: white;">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    {{ form.as_p }}
+
+<!-- Fin del bloque Content -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <!-- {% static 'assets/js/bootstrap.bundle.min.js' %}  -->
+    <script src={% static 'assets/js/check-controls.js' %} ></script>
+</body>
+
+</html>

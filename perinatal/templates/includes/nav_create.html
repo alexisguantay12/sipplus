@@ -1,0 +1,41 @@
+<div class="col" style="border-right: 1px solid #EAEAEA; flex-grow: unset;">
+    <div class="navbar navbar-expand">
+        <ul class="navbar-nav align-items-center flex-column mb-3 active progress-bar2" role="tablist">
+            {% for fields in form.get_elements %}
+            {% if forloop.first %}
+            <li class="nav-item w-100" data-bs-toggle="tab" role="presentation">
+                <a class="nav-link active" data-bs-toggle="tab" href="#id_{{ fields.0.label|slugify }}"
+                   aria-selected="true" role="tab" tabindex="-1">
+                    <div class="container">
+                        <div class="row align-items-center flex-nowrap">
+                            <div class="col flex-fill">
+                                <h6>{{fields.0.label}}</h6>
+                            </div>
+                            <div class="col justify-content-end flex-shrink-0">
+                                <i class="fa-solid fa-circle-check fs-2" style="color: #00D69F;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {% else %}
+            <li class="nav-item w-100" data-bs-toggle="tab" role="presentation">
+                <a class="nav-link" data-bs-toggle="tab" href="#id_{{ fields.0.label|slugify }}"
+                   aria-selected="false" role="tab" tabindex="-1">
+                    <div class="container">
+                        <div class="row align-items-center flex-nowrap">
+                            <div class="col flex-fill">
+                                <h6>{{fields.0.label}}</h6>
+                            </div>
+                            <div class="col justify-content-end flex-shrink-0">
+                                <i class="fa-regular fa-circle fs-2" style="color: #00D69F;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
